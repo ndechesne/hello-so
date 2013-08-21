@@ -15,7 +15,7 @@ generic:
 
 main:
 	gcc -fPIC -c -Wall -g main.c
-	gcc -o apps main.o  libgeneric.so libhal.so
+	gcc -Wl,-rpath,$(PWD) -o apps main.o  libgeneric.so libhal.so
 
 clean:
 	rm -f *.so
